@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelora - Explore More. Experience Life.</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SECTION 1: NAVIGATION BAR -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-compass"></i> Travelora
+            </a>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                    <li><a href="#packages" class="nav-link">Packages</a></li>
+                    <li><a href="#categories" class="nav-link">Explore</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="bookNowBtn">Book Now</button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 2: HERO SECTION -->
+        <section class="hero" id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> Your next adventure starts here</span>
+                <h1 class="hero-title">Discover Your Next Great Adventure</h1>
+                <p class="hero-subtitle">From peaceful beaches to breathtaking mountains, discover incredible destinations and create unforgettable travel experiences with Travelora.</p>
+                <div class="hero-buttons">
+                    <a href="#destinations" class="btn btn-primary btn-lg">Explore Destinations</a>
+                    <a href="#packages" class="btn btn-secondary btn-lg">Discover Packages</a>
+                </div>
+
+                <!-- Travel Search Interface -->
+                <div class="search-box">
+                    <form id="searchForm" class="search-form">
+                        <div class="search-field">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <label for="searchDestination">Destination</label>
+                                <input type="text" id="searchDestination" placeholder="Where are you going?" required>
+                            </div>
+                        </div>
+                        <div class="search-field">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <div>
+                                <label for="searchDate">Travel Date</label>
+                                <input type="date" id="searchDate" required>
+                            </div>
+                        </div>
+                        <div class="search-field">
+                            <i class="fa-solid fa-user-group"></i>
+                            <div>
+                                <label for="searchTravelers">Travelers</label>
+                                <select id="searchTravelers">
+                                    <option value="1">1 Traveler</option>
+                                    <option value="2" selected>2 Travelers</option>
+                                    <option value="3">3 Travelers</option>
+                                    <option value="4">4+ Travelers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search-field">
+                            <i class="fa-solid fa-compass"></i>
+                            <div>
+                                <label for="searchCategory">Category</label>
+                                <select id="searchCategory">
+                                    <option value="all">All Categories</option>
+                                    <option value="beach">Beach Escapes</option>
+                                    <option value="mountain">Mountain Adventure</option>
+                                    <option value="cultural">Cultural Journey</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i> Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: POPULAR DESTINATIONS -->
+        <section class="destinations section" id="destinations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore Popular Destinations</h2>
+                    <p>Find inspiration for your next unforgettable journey.</p>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="india">India</button>
+                    <button class="filter-btn" data-filter="international">International</button>
+                </div>
+
+                <!-- Destination Cards Grid -->
+                <div class="destinations-grid">
+                    <!-- Card 1: Kerala -->
+                    <div class="destination-card" data-category="india">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/kerala.webp" alt="Kerala Backwaters" loading="lazy">
+                            <span class="card-badge">India</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Kerala, India</div>
+                            <h3>God's Own Country</h3>
+                            <p>Experience serene backwaters, lush green hills, and tranquil Ayurvedic retreats.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹12,999</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Kerala">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Goa -->
+                    <div class="destination-card" data-category="india">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/goa.webp" alt="Goa Beaches" loading="lazy">
+                            <span class="card-badge">India</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Goa, India</div>
+                            <h3>Sun, Sand & Sea</h3>
+                            <p>Enjoy vibrant nightlife, golden sandy beaches, and Portuguese-inspired heritage.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹8,999</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Goa">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Jaipur -->
+                    <div class="destination-card" data-category="india">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/jaipur.webp" alt="Jaipur Pink City" loading="lazy">
+                            <span class="card-badge">India</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Jaipur, India</div>
+                            <h3>The Pink City</h3>
+                            <p>Discover majestic forts, royal palaces, and vibrant Rajasthani cultural markets.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹9,499</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Jaipur">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Manali -->
+                    <div class="destination-card" data-category="india">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/manali.webp" alt="Manali Mountains" loading="lazy">
+                            <span class="card-badge">India</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Manali, India</div>
+                            <h3>Himalayan Haven</h3>
+                            <p>Breathtaking snow-capped peaks, thrilling adventure sports, and pine forests.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹10,999</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Manali">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Bali -->
+                    <div class="destination-card" data-category="international">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/bali.jpeg" alt="Bali Indonesia" loading="lazy">
+                            <span class="card-badge">International</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Bali, Indonesia</div>
+                            <h3>Island of the Gods</h3>
+                            <p>Immerse yourself in spiritual temples, terraced rice paddies, and tropical shores.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹24,999</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Bali">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Maldives -->
+                    <div class="destination-card" data-category="international">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/maldives.jpeg" alt="Maldives Resorts" loading="lazy">
+                            <span class="card-badge">International</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Maldives</div>
+                            <h3>Tropical Paradise</h3>
+                            <p>Luxury overwater villas, crystal clear turquoise lagoons, and vibrant coral reefs.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹45,999</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Maldives">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Paris -->
+                    <div class="destination-card" data-category="international">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/paris.avif" alt="Paris France" loading="lazy">
+                            <span class="card-badge">International</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Paris, France</div>
+                            <h3>City of Love & Art</h3>
+                            <p>Stroll down the Seine, admire world-class art, and savor exquisite French cuisine.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹54,999</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Paris">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Switzerland -->
+                    <div class="destination-card" data-category="international">
+                        <div class="card-img-wrapper">
+                            <img src="assets/destinations/switzerland.jpg" alt="Switzerland Alps" loading="lazy">
+                            <span class="card-badge">International</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-location"><i class="fa-solid fa-location-dot"></i> Switzerland</div>
+                            <h3>Alpine Wonderland</h3>
+                            <p>Majestic snow Alps, pristine alpine lakes, and world-renowned scenic train rides.</p>
+                            <div class="card-footer">
+                                <span class="price">From <strong>₹62,999</strong></span>
+                                <button class="btn btn-sm btn-outline explore-dest-btn" data-destination="Switzerland">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FEATURED TRAVEL PACKAGES -->
+        <section class="packages section bg-light" id="packages">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Find the Perfect Travel Package</h2>
+                    <p>Hand-crafted itineraries designed for unforgettable memories.</p>
+                </div>
+
+                <div class="packages-grid">
+                    <!-- Package 1 -->
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="assets/destinations/kerala.webp" alt="Kerala Backwater Escape" loading="lazy">
+                            <span class="package-duration"><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</span>
+                        </div>
+                        <div class="package-content">
+                            <div class="package-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>(4.8 / 120 reviews)</span>
+                            </div>
+                            <h3>Kerala Backwater Escape</h3>
+                            <p>Enjoy a houseboat stay in Alleppey, tea gardens in Munnar, and authentic South Indian dining.</p>
+                            <div class="package-meta">
+                                <span class="package-price">₹12,999 <span>/ person</span></span>
+                            </div>
+                            <div class="package-actions">
+                                <button class="btn btn-outline view-details-btn" data-package="Kerala Backwater Escape">View Details</button>
+                                <button class="btn btn-primary book-package-btn" data-package="Kerala Backwater Escape">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="assets/destinations/bali.jpeg" alt="Bali Tropical Getaway" loading="lazy">
+                            <span class="package-duration"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+                        </div>
+                        <div class="package-content">
+                            <div class="package-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(4.9 / 215 reviews)</span>
+                            </div>
+                            <h3>Bali Tropical Getaway</h3>
+                            <p>Explore Ubud's art markets, majestic cliffside temples, and golden sunset beaches in Seminyak.</p>
+                            <div class="package-meta">
+                                <span class="package-price">₹24,999 <span>/ person</span></span>
+                            </div>
+                            <div class="package-actions">
+                                <button class="btn btn-outline view-details-btn" data-package="Bali Tropical Getaway">View Details</button>
+                                <button class="btn btn-primary book-package-btn" data-package="Bali Tropical Getaway">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="assets/destinations/kashmir.jpg" alt="Kashmir Mountain Retreat" loading="lazy">
+                            <span class="package-duration"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+                        </div>
+                        <div class="package-content">
+                            <div class="package-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>(5.0 / 98 reviews)</span>
+                            </div>
+                            <h3>Kashmir Mountain Retreat</h3>
+                            <p>Experience magical Dal Lake shikara rides, Gulmarg gondola lifts, and snow-laden alpine valleys.</p>
+                            <div class="package-meta">
+                                <span class="package-price">₹19,999 <span>/ person</span></span>
+                            </div>
+                            <div class="package-actions">
+                                <button class="btn btn-outline view-details-btn" data-package="Kashmir Mountain Retreat">View Details</button>
+                                <button class="btn btn-primary book-package-btn" data-package="Kashmir Mountain Retreat">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 4 -->
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="assets/destinations/dubai.jpg" alt="Dubai City Experience" loading="lazy">
+                            <span class="package-duration"><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</span>
+                        </div>
+                        <div class="package-content">
+                            <div class="package-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>(4.7 / 180 reviews)</span>
+                            </div>
+                            <h3>Dubai City Experience</h3>
+                            <p>Witness Burj Khalifa views, thrilling desert dune safaris, and luxurious modern shopping.</p>
+                            <div class="package-meta">
+                                <span class="package-price">₹29,999 <span>/ person</span></span>
+                            </div>
+                            <div class="package-actions">
+                                <button class="btn btn-outline view-details-btn" data-package="Dubai City Experience">View Details</button>
+                                <button class="btn btn-primary book-package-btn" data-package="Dubai City Experience">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: EXPLORE BY CATEGORY -->
+        <section class="categories section" id="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Travel Your Way</h2>
+                    <p>Choose your preferred travel style and embark on tailored adventures.</p>
+                </div>
+
+                <div class="categories-grid">
+                    <!-- Category 1 -->
+                    <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('assets/destinations/maldives.jpg');">
+                        <div class="category-content">
+                            <div class="cat-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+                            <h3>Beach Escapes</h3>
+                            <p>Pristine shores, crystal waves & coastal relaxation.</p>
+                            <button class="btn btn-sm btn-primary category-explore-btn" data-category="Beach Escapes">Explore</button>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('assets/destinations/manali.jpg');">
+                        <div class="category-content">
+                            <div class="cat-icon"><i class="fa-solid fa-mountain"></i></div>
+                            <h3>Mountain Adventures</h3>
+                            <p>Majestic peaks, trekking trails & crisp mountain air.</p>
+                            <button class="btn btn-sm btn-primary category-explore-btn" data-category="Mountain Adventures">Explore</button>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('assets/destinations/jaipur.jpg');">
+                        <div class="category-content">
+                            <div class="cat-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <h3>Cultural Journeys</h3>
+                            <p>Ancient heritage, historic architecture & local folklore.</p>
+                            <button class="btn btn-sm btn-primary category-explore-btn" data-category="Cultural Journeys">Explore</button>
+                        </div>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div class="category-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('assets/destinations/kerala.jpg');">
+                        <div class="category-content">
+                            <div class="cat-icon"><i class="fa-solid fa-binoculars"></i></div>
+                            <h3>Wildlife Experiences</h3>
+                            <p>Exotic wildlife safaris, national parks & natural habitats.</p>
+                            <button class="btn btn-sm btn-primary category-explore-btn" data-category="Wildlife Experiences">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: WHY CHOOSE TRAVELORA? -->
+        <section class="features section bg-light" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Your Journey, Our Priority</h2>
+                    <p>Discover why thousands of travelers trust Travelora every single season.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-route"></i></div>
+                        <h3>Carefully Curated Trips</h3>
+                        <p>Every itinerary is hand-crafted by experienced travel experts to ensure authentic and enriching experiences.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
+                        <h3>Affordable Travel Packages</h3>
+                        <p>Enjoy premium travel experiences and luxury stays at transparent, competitive prices with no hidden fees.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <h3>Personalized Experiences</h3>
+                        <p>Tailor your trips according to your unique pace, preferences, and personal bucket list items.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h3>Easy Booking Experience</h3>
+                        <p>Seamless browsing, secure booking demonstrations, and dedicated 24/7 customer support throughout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SPECIAL TRAVEL OFFERS -->
+        <section class="offers section">
+            <div class="container">
+                <div class="offers-banner">
+                    <div class="offers-content">
+                        <h2>Make Your Next Trip Extra Special</h2>
+                        <p>Unlock exclusive seasonal discounts and limited-time promotional rates on top Indian and international getaways.</p>
+                        <div class="offers-badges">
+                            <span class="offer-pill"><i class="fa-solid fa-percent"></i> 20% OFF Domestic Packages</span>
+                            <span class="offer-pill"><i class="fa-solid fa-percent"></i> 15% OFF International Getaways</span>
+                        </div>
+                        <button class="btn btn-secondary btn-lg" id="exploreOffersBtn">Explore Offers</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: TESTIMONIALS -->
+        <section class="testimonials section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Memories Made with Travelora</h2>
+                    <p>Read heartfelt stories from travelers who explored the world with us.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Travelora made our Kerala houseboat anniversary trip completely seamless! The itinerary was breathtakingly scenic and well-organized from start to finish."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AS</div>
+                            <div class="author-info">
+                                <h4>Aarav Sharma</h4>
+                                <span>Mumbai, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Our Bali tropical getaway was an absolute dream come true. From private resort transfers to temple tours, everything was handled impeccably."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PM</div>
+                            <div class="author-info">
+                                <h4>Priya Menon</h4>
+                                <span>Bengaluru, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="testimonial-text">"The Kashmir mountain retreat was unforgettable. The local guides were extremely warm and knowledgeable. I will definitely book my next trip with Travelora!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RK</div>
+                            <div class="author-info">
+                                <h4>Rahul Kapoor</h4>
+                                <span>Delhi, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: NEWSLETTER SUBSCRIPTION -->
+        <section class="newsletter section" id="contact">
+            <div class="container">
+                <div class="newsletter-box">
+                    <h2>Get Travel Inspiration in Your Inbox</h2>
+                    <p>Subscribe to receive travel inspiration, destination guides, and special promotional offers directly.</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                    </form>
+                    <div id="newsletterMessage" class="newsletter-msg"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SECTION 10: FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">
+                        <i class="fa-solid fa-compass"></i> Travelora
+                    </a>
+                    <p class="footer-desc">Explore More. Experience Life. Your trusted companion for discovering breathtaking destinations across India and the world.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#categories">Explore</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Popular Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#destinations">Kerala, India</a></li>
+                        <li><a href="#destinations">Goa, India</a></li>
+                        <li><a href="#destinations">Bali, Indonesia</a></li>
+                        <li><a href="#destinations">Maldives</a></li>
+                        <li><a href="#destinations">Switzerland</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Customer Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Travelora. All rights reserved. Developed as a Frontend Web Development Internship Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal Demo Popup -->
+    <div class="modal-overlay" id="demoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <h3 id="modalTitle">Booking Demonstration</h3>
+            <p id="modalText">This is a frontend portfolio demonstration project. Real booking and payment transactions are disabled.</p>
+            <button class="btn btn-primary" id="modalActionBtn">Got It</button>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
